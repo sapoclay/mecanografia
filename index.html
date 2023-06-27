@@ -2,59 +2,88 @@
 <html lang="es" >
 <head>
   <meta charset="UTF-8">
-  <title>Mecanografía</title>
-  <link rel="stylesheet" href="./style.css">
+  <title>Tecleadicto</title>
+  <link rel="stylesheet" href="reset.min.css">
+<link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<div id="cabecera">
-  <h1 id="titulo">Mecanografía javascript</h1>
+<div class="titulo" aria-label="Ojos en la pantalla"></div>
+
+<div class="keyboard">
+  <ul class="row row-0">
+    <li class="pinky" id="Escape" data-keycode="27">ESC</li>
+    <li class="pinky" id="1" data-keycode="49">1</li>
+    <li class="ring" id="2" data-keycode="50">2</li>
+    <li class="middle" id="3" data-keycode="51">3</li>
+    <li class="pointer1st" id="4" data-keycode="52">4</li>
+    <li class="pointer2nd" id="5" data-keycode="53">5</li>
+    <li class="pointer2nd" id="6" data-keycode="54">6</li>
+    <li class="pointer1st" id="7" data-keycode="55">7</li>
+    <li class="middle" id="8" data-keycode="56">8</li>
+    <li class="ring" id="9" data-keycode="57">9</li>
+    <li class="pinky" id="0" data-keycode="48">0</li>
+    <li class="pinky" id="minus" data-keycode="189">-</li>
+    <li class="pinky" id="plus" data-keycode="187">+</li>
+    <li class="pinky" id="Backspace" data-keycode="8">BACK</li>
+  </ul>
+  <ul class="row row-1">
+    <li class="pinky" id="tab" data-keycode="9">TAB</li>
+    <li class="pinky" id="Q" data-keycode="81">Q</li>
+    <li class="ring" id="W" data-keycode="87">W</li>
+    <li class="middle" id="E" data-keycode="69">E</li>
+    <li class="pointer1st" id="R" data-keycode="82">R</li>
+    <li class="pointer2nd" id="T" data-keycode="84">T</li>
+    <li class="pointer2nd" id="Y" data-keycode="89">Y</li>
+    <li class="pointer1st" id="U" data-keycode="85">U</li>
+    <li class="middle" id="I" data-keycode="73">I</li>
+    <li class="ring" id="O" data-keycode="79">O</li>
+    <li class="pinky" id="P" data-keycode="80">P</li>
+    <li class="pinky" id="BracketLeft" data-keycode="219">[</li>
+    <li class="pinky" id="BracketRight" data-keycode="221">]</li>
+    <li class="pinky" id="backslash" data-keycode="191">\</li>
+  </ul>
+  
+  <ul class="row row-2">
+    <li class="pinky" id="caps" data-keycode="20">CAPS</li>
+    <li class="pinky" id="A" data-keycode="65">A</li>
+    <li class="ring" id="S" data-keycode="83">S</li>
+    <li class="middle" id="D" data-keycode="68">D</li>
+    <li class="pointer1st" id="F" data-keycode="70">F</li>
+    <li class="pointer2nd" id="G" data-keycode="71">G</li>
+    <li class="pointer2nd" id="H" data-keycode="72">H</li>
+    <li class="pointer1st" id="J" data-keycode="74">J</li>
+    <li class="middle" id="K" data-keycode="75">K</li>
+    <li class="ring" id="L" data-keycode="76">L</li>
+    <li class="pinky" id="semicolon" data-keycode="186">:</li>
+    <li class="pinky" id="apostrophe" data-keycode="222">''</li>
+    <li class="pinky" id="enter" data-keycode="13">ENTER</li>
+  </ul>
+  <ul class="row row-3">
+    <li class="pinky" id="left-shift" data-keycode="16">SHIFT</li>
+    <li class="pinky" id="Z" data-keycode="90">Z</li>
+    <li class="ring" id="X" data-keycode="88">X</li>
+    <li class="middle" id="C" data-keycode="67">C</li>
+    <li class="pointer1st" id="V" data-keycode="86">V</li>
+    <li class="pointer2nd" id="B" data-keycode="66">B</li>
+    <li class="pointer2nd" id="N" data-keycode="78">N</li>
+    <li class="pointer1st" id="M" data-keycode="77">M</li>
+    <li class="middle" id="comma" data-keycode="188">,</li>
+    <li class="ring" id="period" data-keycode="190">.</li>
+    <li class="pinky" id="semicolon" data-keycode="186">;</li>
+    <li class="pinky" id="ShiftRight" data-keycode="16">SHIFT</li>
+  </ul>
 </div>
-<div id="resultados">
-    <div id="aciertos">- Aciertos: 0</div>
-    <div id="fallos">- Fallos: 0</div>
+<div class="titulo2" aria-label="Manos al teclado"></div>
+
+<div id="key-counts">
+  <p id="correct-key-count">Pulsaciones correctas: 0</p>
+  <p id="incorrect-key-count">Pulsaciones incorrectas: 0</p>
 </div>
-<div id="dTexto"><p id="pTexto">asdf jklñ pqwer ty zxcv bn m at pd bhyo qhopq asdf vbruo lolialn lonlk niouh lkjncui lkajsd</p>
-</div>
-<div id="teclado">
-  <div id="fila1">
-    <div id="113" class="tecla">Q</div>
-    <div id="119" class="tecla">W</div>
-    <div id="101" class="tecla">E</div>
-    <div id="114" class="tecla">R</div>
-    <div id="116" class="tecla">T</div>
-    <div id="121" class="tecla">Y</div>
-    <div id="117" class="tecla">U</div>
-    <div id="105" class="tecla">I</div>
-    <div id="111" class="tecla">O</div>
-    <div id="112" class="tecla">P</div>
-  </div>
-  <div id="fila2">
-    <div id="97" class="tecla">A</div>
-    <div id="115" class="tecla">S</div>
-    <div id="100" class="tecla">D</div>
-    <div id="102" class="tecla">F</div>
-    <div id="103" class="tecla">G</div>
-    <div id="104" class="tecla">H</div>
-    <div id="106" class="tecla">J</div>
-    <div id="107" class="tecla">K</div>
-    <div id="108" class="tecla">L</div>
-    <div id="241" class="tecla">Ñ</div>
-  </div>
-  <div id="fila3">
-    <div id="122" class="tecla">Z</div>
-    <div id="120" class="tecla">X</div>
-    <div id="99" class="tecla">C</div>
-    <div id="118" class="tecla">V</div>
-    <div id="98" class="tecla">B</div>
-    <div id="110" class="tecla">N</div>
-    <div id="109" class="tecla">M</div>
-  </div>
-  <div id="fila4">
-    <div id="32" class="teclaEsp"></div>
-  </div>
-</div>
+
+<button id="reset-button">Resetear Contadores</button>
+
 <!-- partial -->
   <script  src="./script.js"></script>
 

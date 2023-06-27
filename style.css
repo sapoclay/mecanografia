@@ -1,85 +1,251 @@
 body {
-  background: linear-gradient(to bottom right, white , cyan);
-  margin: 0;
+  background-color: rgb(0, 0, 0);
+  font-family: "Comic Sans MS", Arial, sans-serif;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-#cabecera {
-  margin: 0;
+/*Título*/
+.titulo, .titulo2{
+  box-sizing: border-box;
+  padding: 10px;
+  border: none;
+  font: normal 38px / normal "Warnes", Helvetica, sans-serif;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  white-space: pre;
+  text-shadow: 0 0 10px rgb(255, 0, 0), 0 0 20px rgba(255, 0, 0),
+    0 0 30px rgba(255, 0, 0), 0 0 40px #727272, 0 0 70px #727272,
+    0 0 80px #4e4e4e, 0 0 100px #2b2b2b;
+  -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
   width: 100%;
-  background: radial-gradient(ellipse, #FFF 0.5%, #004444 99%);
-  box-shadow: 10px 10px 50px  11px #000;
-  border-radius: 5%;
-  margin-bottom: 5%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+/* Estilo para el título cuando se le hace hover */
+.titulo:hover, .titulo2:hover {
+  text-shadow: 0 0 10px rgb(73, 73, 73), 0 0 20px rgb(56, 56, 56),
+    0 0 30px rgb(48, 48, 48), 0 0 40px #5c5c5c, 0 0 70px #000000,
+    0 0 80px #000000, 0 0 100px #000000;
+}
+/* Texto del título */
+.titulo::after {
+  content: "Ojos en la pantalla!!";
 }
 
-h1 {
-  margin: 0;
+.titulo2::after {
+  content: "Manos al teclado!!";
+}
+
+/* Registro pulsaciones */
+#key-counts {
+  display: flex;
+}
+
+#key-counts p {
+  margin-right: 10px;
+}
+
+/* Pulsaciones incorrectas */
+#incorrect-key-count{
+  color:#cf0000;
+  font-weight: bold;
+}
+/* Pulsaciones correctas */
+#correct-key-count{
+  color:rgb(1, 226, 1);
+  font-weight: bold;
+}
+
+/* Boton reset contadores*/
+#reset-button{
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+/* Teclado */
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgb(255, 0, 0);
+}
+
+.row {
+  list-style: none;
+  display: flex;
+}
+
+li {
+  height: 3em;
+  width: 3em;
+  color: rgba(0,0,0,0.7);
+  border-radius: 0.4em;
+  line-height: 3em;
+  letter-spacing: 1px;
+  margin: 0.4em;
+  transition: 0.3s;
   text-align: center;
+  font-size: 1em;
 }
 
-#resultados {
-   padding-left: 3%;
-   font-size: 1.5em;
+#tab {
+  width: 5em;
 }
 
-#dTexto {
-  width: 500px;
-  margin: auto;
-  background-color: white;
-  border: 2px solid;
-  margin-bottom: 20px;
+#caps {
+  width: 6em;
 }
 
-#pTexto {
-  padding-left: 5px;
-  font-size: 2em;
+#left-shift {
+  width: 8em;
 }
 
-.actual {
-  color: cyan;
-  background-color: #006666;
+#enter {
+  width: 6em;
 }
 
-#teclado {
-  padding: 5px;
-  width: 600px;
-  margin: auto;
-  background-color: grey;
-  box-shadow: 10px 10px 5px black;
+#ShiftRight {
+  width: 8em;
 }
 
-.tecla {
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  display: inline-block;
-  border: 1px solid;
-  background-color: white;
-  box-shadow: 2px 2px 0px 0px black;
+#Backspace {
+  width: 5em;
 }
 
-.teclaEsp {
-  border: 1px solid;
-  width: 275px;
-  height: 50px;
-  background-color: white;
-  box-shadow: 2px 2px 0px 0px black;
+.pinky { 
+  background-color: rgb(220, 20, 60);
+  border: 2px solid rgb(220, 20, 60);
+}
+.pinky.selected {
+  color: rgb(220, 20, 60);
 }
 
-#fila1{
-  margin: 5px;
+.ring { 
+  background-color: rgb(255, 127, 80);
+  border: 2px solid rgb(255, 127, 80);
+}
+.ring.selected {
+  color: rgb(255, 127, 80);
 }
 
-#fila2 {
-  margin: 5px;
-  padding-left: 15px; 
+.middle { 
+  background-color: rgb(255, 140, 0);
+  border: 2px solid rgb(255, 140, 0);
+}
+.middle.selected {
+  color: rgb(255, 140, 0);
 }
 
-#fila3 {
-  margin: 5px;
-  padding-left: 35px; 
+.pointer1st { 
+  background-color: rgb(255, 217, 0);
+  border: 2px solid rgb(255, 217, 0);
+}
+.pointer1st.selected {
+  color: rgb(255, 217, 0);
 }
 
-#fila4 {
-  padding-left: 150px;
+.pointer2nd { 
+  background-color: rgb(230, 220, 134);
+  border: 2px solid rgb(230, 220, 134);
 }
+.pointer2nd.selected {
+  color: rgb(230, 220, 134);
+}
+
+.fill-out-key {
+  background-color: rgb(112, 128, 144);
+  border: 2px solid rgb(112, 128, 144);
+}
+
+.selected {
+  background-color: transparent;
+  	-webkit-animation: vibrate-1 0.2s linear infinite both;
+	        animation: vibrate-1 0.2s linear infinite both;
+}
+
+.hit {
+	-webkit-animation: hit 0.2s cubic-bezier(0.390, 0.570, 0.560, 1.000) both;
+	        animation: hit 0.2s cubic-bezier(0.390, 0.570, 0.560, 1.000) both;
+}
+
+@-webkit-keyframes hit {
+  0% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes hit {
+  0% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+@keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
